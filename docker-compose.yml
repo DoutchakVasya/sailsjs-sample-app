@@ -1,0 +1,19 @@
+version: '3'
+services:
+  # JS app 
+  sailjs:
+    build: .
+    container_name: app     
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8080:80"
+      - "4430:443" 
+    volumes:      
+      - ./config/nginx/:/etc/nginx/conf.d/   
+    
