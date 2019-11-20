@@ -15,5 +15,5 @@ services:
       - "8080:80"
       - "4430:443" 
     volumes:      
-      - ./config/nginx/:/etc/nginx/conf.d/   
+      - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
     
